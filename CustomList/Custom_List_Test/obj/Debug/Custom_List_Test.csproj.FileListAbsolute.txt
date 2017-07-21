@@ -1,0 +1,15 @@
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\obj\Debug\Custom_List_Test.csprojResolveAssemblyReference.cache
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\bin\Debug\Custom_List_Test.dll
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\bin\Debug\Custom_List_Test.pdb
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\bin\Debug\CustomList.exe
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\bin\Debug\CustomList.pdb
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\bin\Debug\CustomList.exe.config
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\obj\Debug\Custom_List_Test.dll
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\Custom_List_Test\obj\Debug\Custom_List_Test.pdb
