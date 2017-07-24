@@ -23,7 +23,34 @@ namespace CustomList
 
 
         }
-        public void Add(T value)
+        public int MaxIndex
+        {
+            get
+            {
+                return capacity;
+            }
+            set
+            {
+                capacity = value;
+            }
+        }
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+        }
+
+        public void Remove()
+        {
+
+        }
+        public void Add()
+        {
+
+        }
+        public void Clear()
         {
 
         }
