@@ -132,10 +132,23 @@ namespace Custom_List_Test
             ListTest<string> list = new ListTest<string>() { "house", "appartment", "condo", "cabin", "duplex", "trailer" };
        
             //act
-            list.RemoveAt(2);
+            string result = list.RemoveAt(2);
 
             //assert
-            Assert.AreNotEqual("condo", (2));
+            Assert.AreEqual("condo", result);
+        }
+        [TestMethod]
+        public void RemoveAt_Int_RemovesIntAtSpecifiedIndex()
+        {
+            //arrange
+            ListTest<int> list = new ListTest<int>() { 2, 6, 3, 99, 5, 3, 11 };
+
+            //act
+            int result = list.RemoveAt(3);
+
+            //assert
+            Assert.AreEqual(99, result);
+
         }
         [TestMethod]
         public void Remove_Decimal_RemovesDecimal()
