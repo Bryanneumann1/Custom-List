@@ -22,7 +22,7 @@ namespace Custom_List_Test
             List.Add(33);
 
             //Assert
-            Assert.AreEqual(result, List [5]);
+            Assert.AreEqual(result, List[5]);
 
         }
         [TestMethod]
@@ -111,7 +111,7 @@ namespace Custom_List_Test
             list.Remove("jack");
 
             //assert
-            Assert.AreNotEqual("jack",list);
+            Assert.AreNotEqual("jack", list[0] );
         }
         [TestMethod]
         public void Removing_Int_RemovesInt()
@@ -123,7 +123,7 @@ namespace Custom_List_Test
             list.Remove(3);
 
             //assert
-            Assert.AreNotEqual("3", list);
+            Assert.AreNotEqual("3", list[3]);
         }
         [TestMethod]
         public void RemoveAt_String_RemovesAtIndexSpecified()
@@ -132,7 +132,7 @@ namespace Custom_List_Test
             ListTest<string> list = new ListTest<string>() { "house", "appartment", "condo", "cabin", "duplex", "trailer" };
        
             //act
-            string result = list.RemoveAt(2);
+            string result = list.Remove(2);
 
             //assert
             Assert.AreEqual("condo", result);
@@ -144,7 +144,7 @@ namespace Custom_List_Test
             ListTest<int> list = new ListTest<int>() { 2, 6, 3, 99, 5, 3, 11 };
 
             //act
-            int result = list.RemoveAt(3);
+            int result = list.Remove(3);
 
             //assert
             Assert.AreEqual(99, result);
@@ -160,7 +160,7 @@ namespace Custom_List_Test
             list.Remove(2.8642m);
 
             //assert
-            Assert.AreNotEqual(2.8642, list);
+            Assert.AreNotEqual(2.8642, list[2]);
         }
         [TestMethod]
         public void Remove_Double_RemovesDouble()
@@ -172,7 +172,7 @@ namespace Custom_List_Test
             list.Remove(40000000);
 
             //assert
-            Assert.AreNotEqual(40000000, list);
+            Assert.AreNotEqual(40000000, list[3]);
         }
         [TestMethod]
         public void Count_Double_CountsDoubles()
@@ -182,7 +182,7 @@ namespace Custom_List_Test
             double expectedCount = 3;
 
             //act
-            int actualCount = list.Count;
+            ListTest<double> actualCount = list.Count;
 
             //assert
             Assert.AreEqual(expectedCount,actualCount);
@@ -195,7 +195,7 @@ namespace Custom_List_Test
             int expectedCount = 4;
 
             //act
-            int actualCount = list.Count;
+            ListTest<string> actualCount = list.Count;
 
             //assert
             Assert.AreEqual(expectedCount, actualCount);
@@ -208,7 +208,7 @@ namespace Custom_List_Test
             int expectedCount = 5;
 
             //act
-            int actualCount = list.Count;
+            ListTest<decimal> actualCount = list.Count;
 
             //assert
             Assert.AreEqual(expectedCount, actualCount);
@@ -221,7 +221,7 @@ namespace Custom_List_Test
             int expectedCount = 5;
 
             //act
-            int actualCount = list.Count;
+            ListTest<int> actualCount = list.Count;
 
             //assert
             Assert.AreEqual(expectedCount, actualCount);
@@ -235,7 +235,7 @@ namespace Custom_List_Test
 
             //act
             list.clear();
-            int actualCount = list.Count;
+            ListTest<int> actualCount = list.Count;
 
             //assert
             Assert.AreEqual(expectedCount, actualCount);
@@ -245,10 +245,10 @@ namespace Custom_List_Test
         {
             //arrange
             ListTest<string> list = new ListTest<string>() { "The", "vanadium", "students", "are", "all", "rock", "stars" };
-            string expectedString = "The vanadium students are all rock stars";
+            ListTest<string> expectedString = "The vanadium students are all rock stars";
 
             //act
-            string actualString = list.ToString();
+            ListTest<string> actualString = list.ToString();
 
             //assert
             Assert.AreEqual(expectedString, actualString);
@@ -261,7 +261,7 @@ namespace Custom_List_Test
             ListTest<string> list2 = new ListTest<string> { "this", "test", "works" };
 
             //act
-            string actualList = list1 + list2;
+            ListTest<string> actualList = list1 + list2;
             ListTest<string> expectedList = new ListTest<string>{ "lets", "see", "if", "this", "test", "works" };
             
 
@@ -276,22 +276,11 @@ namespace Custom_List_Test
             ListTest<string> list2 = new ListTest<string> { "of", "this", "string" };
 
             //act
-            string actualList = list1 - list2;
+            ListTest<string> actualList = list1 - list2;
             ListTest<string> expectedList = new ListTest<string> { "This", "test", "should", "remove", "part" };
 
             //Assert
             Assert.AreEqual(actualList, expectedList);
-        }
-        [TestMethod]
-        public void Converting_ListToArray_ConvertsListsToArrays()
-        {
-            //arrange
-            ListTest<int> list = new ListTest<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
-            //act
-            int[] list2 = list.ToArray();
-            //assert
-            Assert.AreEqual(list,list2);
-        }
-            
+        }   
     }
 }
