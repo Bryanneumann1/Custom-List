@@ -105,57 +105,158 @@ namespace Custom_List_Test
         public void Removing_String_Removes()
         {
             //arrange
-            ListTest<string> = new ListTest<string>();
-            string[] testInArray = new string[6] { "jack", "jill", "went", "up", "the", "hill", "to" };
+            ListTest<string> list = new ListTest<string>() { "jack", "jill", "went", "up", "the", "hill", "to" };
 
             //act
-            ListTest.Remove("jack");
+            list.Remove("jack");
 
             //assert
-            Assert.IsTrue(true, "jack");
+            Assert.AreNotEqual("jack",list);
         }
         [TestMethod]
         public void Removing_Int_RemovesInt()
         {
             //arrange
-            ListTest < int > = new ListTest<int>();
-            int[] testInArray = new int[6] { 0, 1, 2, 3, 4, 5, 6 };
+            ListTest<int> list = new ListTest<int>() { 0, 1, 2, 3, 4, 5, 6 };
 
             //act
-            ListTest.Remove(3);
+            list.Remove(3);
 
             //assert
-            Assert.IsTrue(true, "3");
+            Assert.AreNotEqual("3", list);
         }
         [TestMethod]
         public void RemoveAt_String_RemovesAtIndexSpecified()
         {
             //arrange
-            ListTest < string >  = new ListTest<string>();
-            string[] testInArray = new string[5] { "house", "appartment", "condo", "cabin", "duplex", "trailer" };
-            string result = "condo";
-
+            ListTest<string> list = new ListTest<string>() { "house", "appartment", "condo", "cabin", "duplex", "trailer" };
+       
             //act
-            ListTest.RemoveAt(2);
+            list.RemoveAt(2);
 
             //assert
-            Assert.AreEqual(result, "condo");
+            Assert.AreNotEqual("condo", (2));
         }
         [TestMethod]
         public void Remove_Decimal_RemovesDecimal()
         {
             //arrange
-            ListTest < decimal > = new ListTest<decimal>();
-            decimal[] testInArray = new decimal[5] { 0.33m, 1.532m, 2.8642m, 3.55m, 4.123m, 5.989m };
-            decimal result = 2.8642m;
-
-            //act
-            ListTest.Remove(2.8642m);
+            ListTest<decimal> list = new ListTest<decimal>() { 0.33m, 1.532m, 2.8642m, 3.55m, 4.123m, 5.989m };
+           
+             //act
+            list.Remove(2.8642m);
 
             //assert
-            Assert.AreEqual(result, 2.8642m);
-
+            Assert.AreNotEqual(2.8642, list);
         }
+        [TestMethod]
+        public void Remove_Double_RemovesDouble()
+        {
+            //arrange
+            ListTest<double> list = new ListTest<double>() { 20, 15.333, 83.1, 40000000, 21 };
 
+            //act
+            list.Remove(40000000);
+
+            //assert
+            Assert.AreNotEqual(40000000, list);
+        }
+        [TestMethod]
+        public void Count_Double_CountsDoubles()
+        {
+            //arrange
+            ListTest<double> list = new ListTest<double>() { 10, 33.23, 402, 39921 };
+            double expectedCount = 3;
+
+            //act
+            int actualCount = list.Count;
+
+            //assert
+            Assert.AreEqual(expectedCount,actualCount);
+        }
+        [TestMethod]
+        public void Count_Strings_CountsStrings()
+        {
+            //arrange
+            ListTest<string> list = new ListTest<string>() { "teacher", "student", "mentor", "assistant", "teacher aid" };
+            int expectedCount = 4;
+
+            //act
+            int actualCount = list.Count;
+
+            //assert
+            Assert.AreEqual(expectedCount, actualCount);
+        }
+        [TestMethod]
+        public void Count_Decimals_CountsDecimals()
+        {
+            //arrange
+            ListTest<decimal> list = new ListTest<decimal>() { 32.11, 431.2566, 32, 124.2, 120.99, 84.3 };
+            int expectedCount = 5;
+
+            //act
+            int actualCount = list.Count;
+
+            //assert
+            Assert.AreEqual(expectedCount, actualCount);
+        }
+        [TestMethod]
+        public void Count_Int_CountsInt()
+        {
+            //arrange
+            ListTest<int> list = new ListTest<int>() { 99, 3, 256, 8888, 9011, 54321 };
+            int expectedCount = 5;
+
+            //act
+            int actualCount = list.Count;
+
+            //assert
+            Assert.AreEqual(expectedCount, actualCount);
+        }
+        [TestMethod]
+        public void Clear_String_ClearsString()
+        {
+            //arrange
+            ListTest<string> list = new ListTest<string>() { "this", "list", "project", "is", "fun", "!!!!!" };
+            int expectedCount = 0;
+
+            //act
+            list.clear();
+            int actualCount = list.Count;
+
+            //assert
+            Assert.AreEqual(expectedCount, actualCount);
+        }
+        [TestMethod]
+        public void ConvertStrings_ToString_ConvertsInToString()
+        {
+            //arrange
+            ListTest<string> list = new ListTest<string>() { "The", "vanadium", "students", "are", "all", "rock", "stars" };
+            string expectedString = "The vanadium students are all rock stars";
+
+            //act
+            string actualString = list.ToString();
+
+            //assert
+            Assert.AreEqual(expectedString, actualString);
+        }
+        [TestMethod]
+        public void Adding_TwoLists_AddsLists()
+        {
+            //arrange
+            ListTest<string> list1 = new ListTest<string> { "lets", "see", "if" };
+            ListTest<string> list2 = new ListTest<string> { "this", "test", "works" };
+
+            //act
+            string actualList = list1 + list2;
+            ListTest<string> expectedList = new ListTest<string>{ "lets", "see", "if", "this", "test", "works" };
+            
+
+            //assert
+            Assert.AreEqual(expectedList, actualList);
+        }
+        [TestMethod]
+        public void 
+            
     }
 }
