@@ -4,12 +4,11 @@ using CustomList;
 namespace Custom_List_Test
 {
     [TestClass]
-    public class UnitTest1
+    public class List_Tests
     {
         [TestMethod]
         public void Add_Int_AddsToList()
         {
-            //Things and stuff
             //Arrange
             ListTest<int> List = new ListTest<int>();
             int result = 55;
@@ -102,5 +101,61 @@ namespace Custom_List_Test
             //Assert
             Assert.AreEqual(result, List[4]);
         }
+        [TestMethod]
+        public void Removing_String_Removes()
+        {
+            //arrange
+            ListTest<string> = new ListTest<string>();
+            string[] testInArray = new string[6] { "jack", "jill", "went", "up", "the", "hill", "to" };
+
+            //act
+            ListTest.Remove("jack");
+
+            //assert
+            Assert.IsTrue(true, "jack");
+        }
+        [TestMethod]
+        public void Removing_Int_RemovesInt()
+        {
+            //arrange
+            ListTest < int > = new ListTest<int>();
+            int[] testInArray = new int[6] { 0, 1, 2, 3, 4, 5, 6 };
+
+            //act
+            ListTest.Remove(3);
+
+            //assert
+            Assert.IsTrue(true, "3");
+        }
+        [TestMethod]
+        public void RemoveAt_String_RemovesAtIndexSpecified()
+        {
+            //arrange
+            ListTest < string >  = new ListTest<string>();
+            string[] testInArray = new string[5] { "house", "appartment", "condo", "cabin", "duplex", "trailer" };
+            string result = "condo";
+
+            //act
+            ListTest.RemoveAt(2);
+
+            //assert
+            Assert.AreEqual(result, "condo");
+        }
+        [TestMethod]
+        public void Remove_Decimal_RemovesDecimal()
+        {
+            //arrange
+            ListTest < decimal > = new ListTest<decimal>();
+            decimal[] testInArray = new decimal[5] { 0.33m, 1.532m, 2.8642m, 3.55m, 4.123m, 5.989m };
+            decimal result = 2.8642m;
+
+            //act
+            ListTest.Remove(2.8642m);
+
+            //assert
+            Assert.AreEqual(result, 2.8642m);
+
+        }
+
     }
 }
