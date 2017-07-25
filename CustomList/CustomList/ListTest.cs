@@ -13,8 +13,19 @@ namespace CustomList
         int capacity;
         T[] mainArray;
         T[] tempArray;
-        T[] items = new T[6];
+        T[] items = new T[] { };
         //indexer
+        public T this[int number]
+        {
+            get
+            {
+                return mainArray[number];
+            }
+            set
+            {
+                mainArray[number] = value;
+            }
+        }
         public ListTest()
         {
             capacity = 6;
@@ -41,35 +52,30 @@ namespace CustomList
                 return count;
             }
         }
-        public T this[int number]
-        {
-            get
-            {
-                return mainArray[number];
-            }
-            set
-            {
-                mainArray[number] = value;
-            }
-        }
+
         public void Remove()
         {
 
         }
-        public void Add()
+        public void Add(T item)
         {
-            ListTest<int> Test = new ListTest<int>();
-            Test[0] = 3;
-            Test[1] = 4;
-            Test[2] = 5;
-            Test[3] = 6;
-            Test[4] = 7;
-            Test[5] = 200;
-
-            for(int i = 0; i < 6; i++)
+            if(count == MaxIndex)
             {
-                Console.WriteLine(Test[i]);
+                CreatLargerArray();
             }
+            mainArray[count] = item;
+            count++;
+        }
+        public void CreatLargerArray()
+        {
+            T[] tempArray = new T[capacity * 2];
+            for (int i = 0; i < count; i++)
+            {
+                tempArray[i] = mainArray[i];
+            }
+            capacity = capacity * 2;
+            mainArray = tempArray;
+
         }
         public void Clear()
         {

@@ -11,6 +11,7 @@ namespace CustomList
         static void Main(string[] args)
         {
             ListTest<int> List = new ListTest<int>();
+            ListTest<int> List2 = new ListTest<int>();
 
             foreach(int i in List)
             {
