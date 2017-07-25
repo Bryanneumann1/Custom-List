@@ -45,10 +45,19 @@ namespace CustomList
                 capacity = value;
             }
         }
-        public int Count
+        public int? Count()
         {
-            get
+            int length = count;
+            if (length == 0)
             {
+            return null;
+            }
+            else
+            {
+                for (int i = 0; i < 0; i++)
+                {
+                    length = count;
+                }
                 return count;
             }
         }
