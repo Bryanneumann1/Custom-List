@@ -10,6 +10,12 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
+            ListTest<int> List = new ListTest<int>();
+
+            foreach(int i in List)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }

@@ -3,3 +3,4 @@ C:\Users\Home\Desktop\Projects\Custom-List\CustomList\CustomList\bin\Debug\Custo
 C:\Users\Home\Desktop\Projects\Custom-List\CustomList\CustomList\bin\Debug\CustomList.pdb
 C:\Users\Home\Desktop\Projects\Custom-List\CustomList\CustomList\obj\Debug\CustomList.exe
 C:\Users\Home\Desktop\Projects\Custom-List\CustomList\CustomList\obj\Debug\CustomList.pdb
+C:\Users\Home\Desktop\Projects\Custom-List\CustomList\CustomList\obj\Debug\CustomList.csprojResolveAssemblyReference.cache
