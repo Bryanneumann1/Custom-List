@@ -28,7 +28,7 @@ namespace CustomList
         }
         public ListTest()
         {
-            capacity = 6;
+            capacity = 10000;
             mainArray = new T[capacity];
             tempArray = new T[0];
             
@@ -45,26 +45,32 @@ namespace CustomList
                 capacity = value;
             }
         }
-        public int? Count()
+        public int Count
         {
-            int length = count;
-            if (length == 0)
+            get 
             {
-            return null;
-            }
-            else
-            {
-                for (int i = 0; i < 0; i++)
+                for (int i = 0; i < capacity; i++)
                 {
-                    length = count;
+                   count = count++;
                 }
+
                 return count;
             }
+
         }
 
-        public void Remove()
-        {
 
+        public void Remove(T items)
+        {
+            for(int i = 0; i < 0; i++)
+            {
+                if (mainArray[i].Equals(items))
+                {
+                    mainArray[i] = mainArray[i - 1];
+                    count++;
+                }
+            }
+       
         }
         public void Add(T item)
         {
