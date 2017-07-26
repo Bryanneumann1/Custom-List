@@ -28,7 +28,7 @@ namespace CustomList
         }
         public ListTest()
         {
-            capacity = 10000;
+            capacity = 1;
             mainArray = new T[capacity];
             tempArray = new T[0];
             
@@ -67,7 +67,7 @@ namespace CustomList
                         mainArray[j] = mainArray[j + 1];
                         count--;
                     }
-                    return true;
+                     return true;
                 }
             }
             return false;
