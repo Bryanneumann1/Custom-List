@@ -13,7 +13,7 @@ namespace CustomList
         int capacity;
         T[] mainArray;
         T[] tempArray;
-        T[] items = new T[] { };
+        T[] item = new T[] { };
         //indexer
         public T this[int number]
         {
@@ -74,7 +74,7 @@ namespace CustomList
         }
         public void Add(T item)
         {
-            if(count >= capacity % 2)
+            if(count >= capacity * .5)
             {
                 CreatLargerArray();
             }
@@ -95,7 +95,15 @@ namespace CustomList
         {
 
         }
-
+        public override string ToString()
+        {
+            string newString = " ";
+            for (int i = 0; i < count; i++)
+            {
+                newString = newString + mainArray[i].ToString() + " ";
+            }
+            return newString;
+        }
         public IEnumerator GetEnumerator()
         {
             return mainArray.GetEnumerator();

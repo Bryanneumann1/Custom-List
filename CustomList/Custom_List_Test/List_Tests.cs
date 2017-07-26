@@ -6,6 +6,8 @@ namespace Custom_List_Test
     [TestClass]
     public class List_Tests
     {
+
+
         [TestMethod]
         public void Add_Int_AddsToList()
         {
@@ -232,7 +234,7 @@ namespace Custom_List_Test
         //public void Clear_String_ClearsString()
         //{
         //    //arrange
-        //    ListTest<string> list = new ListTest<string>() { "this", "list", "project", "is", "fun", "!!!!!" };
+        //    ListTest<string> list = new ListTest<string>() { "this", "list", "project", "is", "fun", ": /" };
         //    int expectedCount = 0;
 
         //    //act
@@ -242,19 +244,19 @@ namespace Custom_List_Test
         //    //assert
         //    Assert.AreEqual(expectedCount, actualCount);
         //}
-        //[TestMethod]
-        //public void ConvertStrings_ToString_ConvertsInToString()
-        //{
-        //    //arrange
-        //    ListTest<string> list = new ListTest<string>() { "The", "vanadium", "students", "are", "all", "rock", "stars" };
-        //    ListTest<string> expectedString = "The vanadium students are all rock stars";
+        [TestMethod]
+        public void ConvertStrings_ToString_ConvertsInToString()
+        {
+            //arrange
+            ListTest<string> list = new ListTest<string>() { "The", "vanadium", "students", "are", "all", "rock", "stars" };
+            string expectedString = "The vanadium students are all rock stars ";
 
-        //    //act
-        //    ListTest<string> actualString = list.ToString();
+            //act
+            string actualString =  list.ToString();
 
-        //    //assert
-        //    Assert.AreEqual(expectedString, actualString);
-        //}
+            //assert
+            Assert.AreEqual(expectedString, actualString);
+        }
         //[TestMethod]
         //public void Adding_TwoLists_AddsLists()
         //{
