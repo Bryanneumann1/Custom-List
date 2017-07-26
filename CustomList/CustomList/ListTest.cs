@@ -56,25 +56,25 @@ namespace CustomList
 
                 return count;
             }
-
         }
-
-
-        public void Remove(T items)
+        public bool Remove(T item)
         {
-            for(int i = 0; i < 0; i++)
+            for (int i = 0; i < count; i++)
             {
-                if (mainArray[i].Equals(items))
+                if (mainArray[i].Equals(item))
                 {
-                    mainArray[i] = mainArray[i - 1];
-                    count++;
+                    for (int j = i; j < count; j++){
+                        mainArray[j] = mainArray[j + 1];
+                        count--;
+                    }
+                    return true;
                 }
             }
-       
+            return false;
         }
         public void Add(T item)
         {
-            if(count == MaxIndex)
+            if(count >= capacity % 2)
             {
                 CreatLargerArray();
             }
@@ -90,7 +90,6 @@ namespace CustomList
             }
             capacity = capacity * 2;
             mainArray = tempArray;
-
         }
         public void Clear()
         {

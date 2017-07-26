@@ -125,33 +125,33 @@ namespace Custom_List_Test
             list.Remove(3);
 
             //assert
-            Assert.AreNotEqual("3", list[3]);
+            Assert.AreNotEqual(3, list[3]);
         }
-        //[TestMethod]
-        //public void RemoveAt_String_RemovesAtIndexSpecified()
-        //{
-        //    //arrange
-        //    ListTest<string> list = new ListTest<string>() { "house", "appartment", "condo", "cabin", "duplex", "trailer" };
+        [TestMethod]
+        public void Remove_String_RemovesAtIndexSpecified()
+        {
+            //arrange
+            ListTest<string> list = new ListTest<string>() { "house", "appartment", "condo", "cabin", "duplex", "trailer" };
 
-        //    //act
-        //    string result = list.Remove();
+            //act
+            list.Remove("condo");
 
-        //    //assert
-        //    Assert.AreNotEqual("condo", result);
-        //}
-        //[TestMethod]
-        //public void RemoveAt_Int_RemovesIntAtSpecifiedIndex()
-        //{
-        //    //arrange
-        //    ListTest<int> list = new ListTest<int>() { 2, 6, 3, 99, 5, 3, 11 };
+            //assert
+            Assert.AreNotEqual("condo", list[2]);
+        }
+        [TestMethod]
+        public void RemoveAt_Int_RemovesIntAtSpecifiedIndex()
+        {
+            //arrange
+            ListTest<int> list = new ListTest<int>() { 2, 6, 3, 99, 5, 3, 11 };
 
-        //    // act
-        //    int result = list.Remove;
+            // act
+            list.Remove(99);
 
-        //    //assert
-        //    Assert.AreEqual(99, result);
+            //assert
+            Assert.AreNotEqual(99, list[3]);
 
-        //}
+        }
         [TestMethod]
         public void Remove_Decimal_RemovesDecimal()
         {
@@ -162,7 +162,7 @@ namespace Custom_List_Test
             list.Remove(2.8642m);
 
             //assert
-            Assert.AreNotEqual(2.8642, list[2]);
+            Assert.AreNotEqual(2.8642m, list[2]);
         }
         [TestMethod]
         public void Remove_Double_RemovesDouble()
