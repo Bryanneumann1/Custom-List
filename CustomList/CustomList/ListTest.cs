@@ -97,7 +97,7 @@ namespace CustomList
         }
         public override string ToString()
         {
-            string newString = " ";
+            string newString = "";
             for (int i = 0; i < count; i++)
             {
                 newString = newString + mainArray[i].ToString() + " ";
@@ -106,7 +106,10 @@ namespace CustomList
         }
         public IEnumerator GetEnumerator()
         {
-            return mainArray.GetEnumerator();
+            for(int index = 0; index < mainArray.Length; index++)
+            {
+                yield return mainArray[index];
+            }
         }
     }
 }
