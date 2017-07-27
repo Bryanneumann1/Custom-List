@@ -25,7 +25,21 @@ namespace Custom_List_Test
 
             //Assert
             Assert.AreEqual(result, List[5]);
+        }
+        [TestMethod]
+        public void Add_Long_AddsToList()
+        {
+            //arrange
+            ListTest<long> list = new ListTest<long>();
+            long result = 1000000000000000000;
+            list.Add(1234567890);
+            list.Add(112233445566778899);
+            list.Add(987654321);
+            list.Add(1000000000000000000);
 
+            //assert
+            Assert.AreEqual(result, list[3]);
+        
         }
         [TestMethod]
         public void Add_LargeNumbers_AddsToList()
@@ -155,6 +169,31 @@ namespace Custom_List_Test
 
         }
         [TestMethod]
+        public void RemoveAt_Double_RemovesDoubleAtSpecifiedIndex()
+        {
+            //arrange
+            ListTest<double> list = new ListTest<double> { 3, 4.44, 5, 6.6666, 77777777.7 };
+
+            //act
+            list.Remove(6.6666);
+
+            //assert
+            Assert.AreNotEqual(6.6666, list[3]);
+        
+        }
+        [TestMethod]
+        public void RemoveAt_Decimal_RemovesDecimalAtSpecifiedIndex()
+        {
+            //arrange
+            ListTest<decimal> list = new ListTest<decimal> { 1m, 2.22222m, 3333333.333333333m, 4444444444444.444444444m };
+
+            //act
+            list.Remove(3333333.333333333m);
+
+            //assert
+            Assert.AreNotEqual(3333333.333333333m, list[2]);
+        }
+        [TestMethod]
         public void Remove_Decimal_RemovesDecimal()
         {
             //arrange
@@ -244,6 +283,57 @@ namespace Custom_List_Test
             Assert.AreEqual(expectedString, actualString);
         }
         [TestMethod]
+        public void ConvertsInt_ToString_ConvertsInToString()
+        {
+            //arrange
+            ListTest<int> list = new ListTest<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            string expectedString = "1 2 3 4 5 6 7 8 9 ";
+
+            //act
+            string actualString = list.ToString();
+
+            //assert
+            Assert.AreEqual(expectedString, actualString);
+        }
+        [TestMethod]
+        public void ConvertsDecimal_ToString_ConvertsInToString()
+        {
+            //arrange
+            ListTest<decimal> list = new ListTest<decimal> { 1.1m, 2.2m, 3.3m, 4.4m, 5.5m };
+            string expectedString = "1.1 2.2 3.3 4.4 5.5 ";
+
+            //act
+            string actualString = list.ToString();
+
+            //assert
+            Assert.AreEqual(actualString, expectedString);
+        }
+        [TestMethod]
+        public void ConvertsDouble_ToString_ConvertsInToString()
+        {
+            //arrange
+            ListTest<double> list = new ListTest<double> { 1, 2.2, 3.3, 4.4444444444 };
+            string expectedString = "1 2.2 3.3 4.4444444444 ";
+            //act
+            string actualString = list.ToString();
+
+            //assert
+            Assert.AreEqual(actualString, expectedString);
+        }
+        [TestMethod]
+        public void ConvertsLarge_Int_ConvertsLargeInt()
+        {
+            //arrange
+            ListTest<int> list = new ListTest<int> { 234552323 };
+            string expectedString = "234552323 ";
+
+            //act
+            string actualString = list.ToString();
+
+            //assert
+            Assert.AreEqual(expectedString, actualString);
+        }
+        [TestMethod]
         public void Adding_TwoLists_AddsLists()
         {
             //arrange
@@ -314,7 +404,7 @@ namespace Custom_List_Test
             //assert
             Assert.AreEqual(actualList.ToString(), expectedList.ToString());
         }
-        [TestMethod]
+        
 
         //[TestMethod]
         //public void Zip_listsTogether_CombinesListInZipperForm()
