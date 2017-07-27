@@ -31,7 +31,7 @@ namespace CustomList
             capacity = 1;
             mainArray = new T[capacity];
             tempArray = new T[0];
-            
+
 
         }
         public int MaxIndex
@@ -47,11 +47,11 @@ namespace CustomList
         }
         public int Count
         {
-            get 
+            get
             {
                 for (int i = 0; i < capacity; i++)
                 {
-                   count = count++;
+                    count = count++;
                 }
 
                 return count;
@@ -63,18 +63,18 @@ namespace CustomList
             {
                 if (mainArray[i].Equals(item))
                 {
-                    for (int j = i; j < count; j++){
+                    for (int j = i; j < count; j++) {
                         mainArray[j] = mainArray[j + 1];
                         count--;
                     }
-                     return true;
+                    return true;
                 }
             }
             return false;
         }
         public void Add(T item)
         {
-            if(count >= capacity * .5)
+            if (count >= capacity * .5)
             {
                 CreatLargerArray();
             }
@@ -104,6 +104,20 @@ namespace CustomList
             }
             return newString;
         }
+        public static ListTest<T> operator +(ListTest<T> list1, ListTest<T> list2)
+        {
+            ListTest<T> newList = new ListTest<T>();
+            for (int i = 0; i < list1.count; i++)
+            {
+                newList.Add(list1[i]);
+            }
+            for (int i = 0; i<list2.count; i++)
+            {
+                newList.Add(list2[i]);
+            }
+            return newList;
+        }
+
         public IEnumerator GetEnumerator()
         {
             for(int index = 0; index < mainArray.Length; index++)

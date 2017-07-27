@@ -257,21 +257,21 @@ namespace Custom_List_Test
             //assert
             Assert.AreEqual(expectedString, actualString);
         }
-        //[TestMethod]
-        //public void Adding_TwoLists_AddsLists()
-        //{
-        //    //arrange
-        //    ListTest<string> list1 = new ListTest<string> { "lets", "see", "if" };
-        //    ListTest<string> list2 = new ListTest<string> { "this", "test", "works" };
+        [TestMethod]
+        public void Adding_TwoLists_AddsLists()
+        {
+            //arrange
+            ListTest<string> list1 = new ListTest<string> { "lets", "see", "if" };
+            ListTest<string> list2 = new ListTest<string> { "this", "test", "works" };
 
-        //    //act
-        //    ListTest<string> actualList = list1 + list2;
-        //    ListTest<string> expectedList = new ListTest<string> { "lets", "see", "if", "this", "test", "works" };
+            //act
+            ListTest<string> actualList = (list1 + list2);
+            ListTest<string> expectedList = new ListTest<string> { "lets", "see", "if", "this", "test", "works" };
 
 
-        //    //assert
-        //    Assert.AreEqual(expectedList, actualList);
-        //}
+            //assert
+            Assert.AreEqual(expectedList.ToString(), actualList.ToString());
+        }
         //[TestMethod]
         //public void Removing_ListsFromAList_RemovesList()
         //{
