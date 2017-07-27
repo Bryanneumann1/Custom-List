@@ -230,20 +230,6 @@ namespace Custom_List_Test
             //assert
             Assert.AreEqual(expectedCount, actualCount);
         }
-        //[TestMethod]
-        //public void Clear_String_ClearsString()
-        //{
-        //    //arrange
-        //    ListTest<string> list = new ListTest<string>() { "this", "list", "project", "is", "fun", ": /" };
-        //    int expectedCount = 0;
-
-        //    //act
-        //    list.clear();
-        //    ListTest<int> actualCount = list.Count;
-
-        //    //assert
-        //    Assert.AreEqual(expectedCount, actualCount);
-        //}
         [TestMethod]
         public void ConvertStrings_ToString_ConvertsInToString()
         {
@@ -273,7 +259,7 @@ namespace Custom_List_Test
             Assert.AreEqual(expectedList.ToString(), actualList.ToString());
         }
         [TestMethod]
-        public void Removing_ListsFromAList_RemovesList()
+        public void RemovingString_ListsFromAList_RemovesListString()
         {
             //arrange
             ListTest<string> list1 = new ListTest<string> { "This", "test", "should", "remove", "part", "of", "this", "string" };
@@ -286,5 +272,59 @@ namespace Custom_List_Test
             //Assert
             Assert.AreEqual(actualList.ToString(), expectedList.ToString());
         }
+        [TestMethod]
+        public void RemovingInt_ListsFromAList_RemovesInt()
+        {
+            //arrange
+            ListTest<int> list1 = new ListTest<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+            ListTest<int> list2 = new ListTest<int> { 7, 8, 9, 0 };
+
+            //act
+            ListTest<int> actualList = list1 - list2;
+            ListTest<int> expectedList = new ListTest<int> { 1, 2, 3, 4, 5, 6 };
+
+            //assert
+            Assert.AreEqual(actualList.ToString(), expectedList.ToString());
+        }
+        [TestMethod]
+        public void RemovingDouble_ListFromList_RemovesDoubles()
+        {
+            //arrange
+            ListTest<double> list1 = new ListTest<double> { 11.11, 22.22, 33, 44.444, 55.5555555 };
+            ListTest<double> list2 = new ListTest<double> { 44.444, 55.5555555 };
+
+            //act
+            ListTest<double> actualList = list1 - list2;
+            ListTest<double> expectedList = new ListTest<double> { 11.11, 22.22, 33 };
+
+            //assert
+            Assert.AreEqual(actualList.ToString(), expectedList.ToString());
+        }
+        [TestMethod]
+        public void RemovingDecimal_ListFromList_RemovesDecimals()
+        {
+            //arrange
+            ListTest<decimal> list1 = new ListTest<decimal> { 1m, 2.22m, 3.33m, 4.4444m };
+            ListTest<decimal> list2 = new ListTest<decimal> { 3.33m, 4.4444m };
+
+            //act
+            ListTest<decimal> actualList = list1 - list2;
+            ListTest<decimal> expectedList = new ListTest<decimal> { 1m, 2.22m };
+
+            //assert
+            Assert.AreEqual(actualList.ToString(), expectedList.ToString());
+        }
+        [TestMethod]
+
+        //[TestMethod]
+        //public void Zip_listsTogether_CombinesListInZipperForm()
+        //{
+        //    //arrange
+        //    ListTest<int> list1 = new ListTest<int> { 1, 3, 5, 7, 9 };
+        //    ListTest<int> list2 = new ListTest<int> { 2, 4, 6, 8, 10 };
+
+        //    //act
+
+        //}
     }
 }

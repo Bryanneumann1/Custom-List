@@ -91,10 +91,7 @@ namespace CustomList
             capacity = capacity * 2;
             mainArray = tempArray;
         }
-        public void Clear()
-        {
 
-        }
         public override string ToString()
         {
             string newString = "";
@@ -126,6 +123,7 @@ namespace CustomList
             }
             return list1;
         }
+
         public IEnumerator GetEnumerator()
         {
             for(int index = 0; index < mainArray.Length; index++)
