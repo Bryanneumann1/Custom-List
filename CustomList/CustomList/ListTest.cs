@@ -117,7 +117,15 @@ namespace CustomList
             }
             return newList;
         }
+        public static ListTest<T> operator -(ListTest<T> list1, ListTest<T> list2)
+        {
 
+            for (int i = 0; i < list2.count; i++)
+            {
+                list1.Remove(list2[i]);
+            }
+            return list1;
+        }
         public IEnumerator GetEnumerator()
         {
             for(int index = 0; index < mainArray.Length; index++)

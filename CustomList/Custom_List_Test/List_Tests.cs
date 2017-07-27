@@ -272,19 +272,19 @@ namespace Custom_List_Test
             //assert
             Assert.AreEqual(expectedList.ToString(), actualList.ToString());
         }
-        //[TestMethod]
-        //public void Removing_ListsFromAList_RemovesList()
-        //{
-        //    //arrange
-        //    ListTest<string> list1 = new ListTest<string> { "This", "test", "should", "remove", "part", "of", "this", "string" };
-        //    ListTest<string> list2 = new ListTest<string> { "of", "this", "string" };
+        [TestMethod]
+        public void Removing_ListsFromAList_RemovesList()
+        {
+            //arrange
+            ListTest<string> list1 = new ListTest<string> { "This", "test", "should", "remove", "part", "of", "this", "string" };
+            ListTest<string> list2 = new ListTest<string> { "of", "this", "string" };
 
-        //    //act
-        //    ListTest<string> actualList = list1 - list2;
-        //    ListTest<string> expectedList = new ListTest<string> { "This", "test", "should", "remove", "part" };
+            //act
+            ListTest<string> actualList = list1 - list2;
+            ListTest<string> expectedList = new ListTest<string> { "This", "test", "should", "remove", "part" };
 
-        //    //Assert
-        //    Assert.AreEqual(actualList, expectedList);
-        //}
+            //Assert
+            Assert.AreEqual(actualList.ToString(), expectedList.ToString());
+        }
     }
 }
