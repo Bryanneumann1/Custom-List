@@ -132,6 +132,18 @@ namespace Custom_List_Test
             Assert.AreEqual("jill", list[0]);
         }
         [TestMethod]
+        public void Removing_LongNumbers_RemovesLong()
+        {
+            //arrange
+            ListTest<long> list = new ListTest<long> { 1111111111, 2222222222, 3333333333, 4444444444 };
+
+            //act
+            list.Remove(4444444444);
+
+            //assert
+            Assert.AreNotEqual(4444444444, list[3]);
+        }
+        [TestMethod]
         public void Removing_Int_RemovesInt()
         {
             //arrange
@@ -265,6 +277,19 @@ namespace Custom_List_Test
 
             //act
             int actualCount = list.Count;
+
+            //assert
+            Assert.AreEqual(expectedCount, actualCount);
+        }
+        [TestMethod]
+        public void Count_long_CountsLongNumbers()
+        {
+            //arrange
+            ListTest<long> list = new ListTest<long>() { 1111111111, 22222222222, 333333333333, 44444444444444, 555555555 };
+            long expectedCount = 5;
+
+            //act
+            long actualCount = list.Count;
 
             //assert
             Assert.AreEqual(expectedCount, actualCount);
@@ -404,17 +429,20 @@ namespace Custom_List_Test
             //assert
             Assert.AreEqual(actualList.ToString(), expectedList.ToString());
         }
-        
+        [TestMethod]
+        public void RemovingLong_ListFromList_RemovesLongList()
+        {
+            //arrange
+            ListTest<long> list1 = new ListTest<long> { 111111111, 22222222, 33333333, 444444444, 5555555555, 666666 };
+            ListTest<long> list2 = new ListTest<long> { 444444444, 5555555555,666666 };
 
-        //[TestMethod]
-        //public void Zip_listsTogether_CombinesListInZipperForm()
-        //{
-        //    //arrange
-        //    ListTest<int> list1 = new ListTest<int> { 1, 3, 5, 7, 9 };
-        //    ListTest<int> list2 = new ListTest<int> { 2, 4, 6, 8, 10 };
+            //act
+            ListTest<long> actualList = list1 - list2;
+            ListTest<long> expectedList = new ListTest<long> { 111111111, 22222222,33333333 };
+            //assert
+            Assert.AreEqual(actualList.ToString(), expectedList.ToString());
+        }
 
-        //    //act
 
-        //}
     }
 }
