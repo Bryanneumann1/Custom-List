@@ -443,7 +443,7 @@ namespace Custom_List_Test
             Assert.AreEqual(actualList.ToString(), expectedList.ToString());
         }
         [TestMethod]
-        public void Zip_TwoListsTogether_ZipsLists()
+        public void Zip_TwoIntListsTogether_ZipsLists()
         {
             //arrange
             ListTest<int> list1 = new ListTest<int> { 1, 3, 5, 7, 9 };
@@ -471,7 +471,7 @@ namespace Custom_List_Test
             Assert.AreEqual(newList.ToString(), expectedList.ToString());
         }
         [TestMethod]
-        public void Zip_decimalLists_ZipsLists()
+        public void Zip_DecimalLists_ZipsLists()
         {
             //arrange
             ListTest<decimal> list1 = new ListTest<decimal> { 1.5m, 2.5m, 3.5m, 4.5m };
@@ -483,7 +483,34 @@ namespace Custom_List_Test
 
             //assert
             Assert.AreEqual(newList.ToString(), expectedList.ToString());
+        }
+        [TestMethod]
+        public void Zip_DoubleLists_ZipsLists()
+        {
+            //arrange
+            ListTest<double> list1 = new ListTest<double> { 11, 33, 55.5555 };
+            ListTest<double> list2 = new ListTest<double> { 22, 44, 66.6666666 };
 
+            //act
+            ListTest<double> newList = list1.Zip(list2);
+            ListTest<double> expectedList = new ListTest<double> { 11, 22, 33, 44, 55.5555, 66.6666666 };
+
+            //assert
+            Assert.AreEqual(newList.ToString(), expectedList.ToString());
+        }
+        [TestMethod]
+        public void Zip_LongLists_ZipsLists()
+        {
+            //arrange
+            ListTest<long> list1 = new ListTest<long> { 1000000000, 3000000000, 5000000000, 7000000000 };
+            ListTest<long> list2 = new ListTest<long> { 2000000000, 4000000000, 6000000000, 8000000000 };
+
+            //act
+            ListTest<long> newList = list1.Zip(list2);
+            ListTest<long> expectedList = new ListTest<long> { 1000000000, 2000000000, 3000000000, 4000000000, 5000000000, 6000000000, 7000000000, 8000000000 };
+
+            //assert
+            Assert.AreEqual(newList.ToString(), expectedList.ToString());
         }
     }
 }

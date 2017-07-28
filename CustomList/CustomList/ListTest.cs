@@ -14,7 +14,7 @@ namespace CustomList
         T[] mainArray;
         T[] tempArray;
         T[] item = new T[] { };
-        //indexer
+        
         public T this[int number]
         {
             get
