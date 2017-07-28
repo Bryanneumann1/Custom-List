@@ -123,7 +123,21 @@ namespace CustomList
             }
             return list1;
         }
+        public ListTest<T> Zip(ListTest<T> list2)
+        {
+            ListTest<T> newlist = new ListTest<T>();
 
+            if (count >= list2.count)
+            {
+                count = list2.count;
+            }
+            for (int i = 0; i < count; i++)
+            {
+                newlist.Add(mainArray[i]);
+                newlist.Add(list2[i]);
+            }
+                return newlist;
+        }
         public IEnumerator GetEnumerator()
         {
             for(int index = 0; index < mainArray.Length; index++)

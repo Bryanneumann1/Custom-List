@@ -442,7 +442,48 @@ namespace Custom_List_Test
             //assert
             Assert.AreEqual(actualList.ToString(), expectedList.ToString());
         }
+        [TestMethod]
+        public void Zip_TwoListsTogether_ZipsLists()
+        {
+            //arrange
+            ListTest<int> list1 = new ListTest<int> { 1, 3, 5, 7, 9 };
+            ListTest<int> list2 = new ListTest<int> { 2, 4, 6, 8, 0 };
 
+            //act
+            ListTest<int> newList = list1.Zip(list2);
+            ListTest<int> expectedList = new ListTest<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
 
+            //assert
+            Assert.AreEqual(newList.ToString(), expectedList.ToString());
+        }
+        [TestMethod]
+        public void Zip_StringLists_ZipsLists()
+        {
+            //arrange
+            ListTest<string> list1 = new ListTest<string> { "1", "3", "5", "7", "9" };
+            ListTest<string> list2 = new ListTest<string> { "2", "4", "6", "8", "0" };
+
+            //act
+            ListTest<string> newList = list1.Zip(list2);
+            ListTest<string> expectedList = new ListTest<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
+
+            //assert
+            Assert.AreEqual(newList.ToString(), expectedList.ToString());
+        }
+        [TestMethod]
+        public void Zip_decimalLists_ZipsLists()
+        {
+            //arrange
+            ListTest<decimal> list1 = new ListTest<decimal> { 1.5m, 2.5m, 3.5m, 4.5m };
+            ListTest<decimal> list2 = new ListTest<decimal> { 2m, 3m, 4m, 5m };
+
+            //act
+            ListTest<decimal> newList = list1.Zip(list2);
+            ListTest<decimal> expectedList = new ListTest<decimal> { 1.5m, 2m, 2.5m, 3m, 3.5m, 4m, 4.5m, 5m };
+
+            //assert
+            Assert.AreEqual(newList.ToString(), expectedList.ToString());
+
+        }
     }
 }
